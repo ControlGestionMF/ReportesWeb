@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso a Reportes</title>
+</head>
+<body>
+    <div id="loginDiv">
+        <h2>Iniciar sesión</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <br><br>
+        <input type="password" id="password" placeholder="Contraseña">
+        <br><br>
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <div id="reportDiv" style="display:none;">
+        <h2>Reporte Power BI</h2>
+        <iframe width="1000" height="600"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjEzOGFkOTQtMWY5OC00M2E2LTk5YjUtZTYyNzdmYjRmMTFiIiwidCI6IjNhYjBkMzAyLWE3Y2EtNGE4Yy04OGUwLTAyYzM0MzkwZGQ5OCJ9"
+            frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+    <script>
+        function login() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            
+            if(user === "admin" && pass === "1234") {
+                document.getElementById("loginDiv").style.display = "none";
+                document.getElementById("reportDiv").style.display = "block";
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+    </script>
+</body>
+</html>
